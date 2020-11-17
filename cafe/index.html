@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tuxedo Cat Coffee</title>
+    <link type="text/css" rel="stylesheet" href="cafe.css">
+     <script src="cafe.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Tuxedo Cat Coffee"/>
+    </header>
+    <main>
+        <form id="order_form" name="order_form" action="checkout.html" method="get">
+            <section id="menu">
+            	<h2>Menu</h2>
+            	<p>Click an item to add it to your order.</p>
+            	<ul>
+            		<li><a href="#"><img id="images/espresso_info.jpg" src="images/espresso.jpg" alt="espresso"/></a></li>
+            		<li><a href="#"><img id="images/latte_info.jpg" src="images/latte.jpg" alt="latte"/></a></li>
+            		<li><a href="#"><img id="images/cappuccino_info.jpg" src="images/cappuccino.jpg" alt="cappuccino"/></a></li>
+            		<li><a href="#"><img id="images/coffee_info.jpg" src="images/coffee.jpg" alt="coffee"/></a></li>
+            		<li><a href="#"><img id="images/biscotti_info.jpg" src="images/biscotti.jpg" alt="biscotti"/></a></li>
+            		<li><a href="#"><img id="images/scone_info.jpg" src="images/scone.jpg" alt="scone"/></a></li>
+            	</ul>
+            </section>
+
+            <section>
+            	<h2>Your Order</h2>
+            	<section>
+            		<select id="order" name="order" size="6">
+            		</select>
+            		<p id="total">&nbsp;</p>            		
+           		</section>
+            	<section id="buttons">
+           			<input type="button" onclick = "location.href='checkout.html'" name="place_order" id="place_order" value="Place Order">
+           			<input type="button" name="clear_order" id="clear_order" value="Clear Order">				            		
+            	</section>
+            </section>   
+        </form>
+    </main> 
+</body>
+</html>
+<script>
+"use strict";
+
+$(document).ready(function() {
+ var total =0;
+// add hover handler and click handler to each image in table
+$("ul img").each(function() {
+
+// set up event handlers for each image, on hover
+
+$(this).hover(function()
+{
+    $(this).css("opacity", 0.5);
+    $(this).attr("src", this.id);
+}, function (){
+    $(this).css("opacity", 1);
+    var imgSrc = (this.id).split("_");
+    $(this).attr("src", imgSrc[0] + ".jpg");
+}); // end hover
+
+// set up event handlers for each image, when clicked
+
+$(this).click(function(evt) {
+    var strTotal = document.getElementById("total").textContent;
+    
+    if (strTotal.length < 3){
+        total = 0.00;
+    }
+    else {
+        var getTotal = strTotal.substr(strTotal.indexOf("$") + 1,strTotal.length);
+        total = parseFloat(getTotal);
+    }
+    
+    var item = this.id;
+    if(item== "images/espresso_info.jpg"){
+        $('#order').append($('<option>').html("$1.95 - Espresso"));
+        var strTotal = total += 1.95;
+    }
+    else if (item == "images/latte_info.jpg"){
+         $('#order').append($('<option></option>').html("$2.95 - Latte"));
+        var strTotal = total += 2.95;
+    }
+    else if (item == "images/cappuccino_info.jpg"){
+         $('#order').append($('<option>').html("$3.45 - Cappuccino"));
+        var strTotal = total += 3.45;
+    }
+    else if (item == "images/coffee_info.jpg"){
+         $('#order').append($('<option>').html("$1.75 - Coffee"));
+        var strTotal = total += 1.75;
+    }
+    else if (item == "images/biscotti_info.jpg"){
+         $('#order').append($('<option>').html("$1.95 - Biscotti"));
+        var strTotal = total += 1.95;
+    }
+    else if (item == "images/scone_info.jpg"){
+         $('#order').append($('<option>').html("$2.95 - Scone"));
+        var strTotal = total += 2.95;
+    }
+    document.getElementById("total").textContent = "Total: $" + Number(total).toFixed(2);
+evt.preventDefault();
+    }); // end click
+}); // end each
+
+$("#place_order").click(function() {
+    $("order_form").submit();
+}); // end click
+
+$("#clear_order").click(function() {
+    $("#order option").remove();
+    document.getElementById("total").textContent = " ";
+    }); // end click
+}); // end ready
+</script>
