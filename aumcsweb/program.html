@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang = "en"> 
+<style>
+    html{
+        background-image: url(images/campus.jpg);
+        background-color: orange;
+    }
+    header{
+        background-color: orange;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background: linear-gradient(45deg, white,orange,black);
+    }
+    body{
+        margin-right: 2px;
+        margin:auto;
+        width: 800px;
+        background-color: white;
+        border: 2px solid black;
+        padding-bottom: 200px;
+    }
+    header img{
+        float: left;
+        height: 150px;
+        width:150px;
+    }
+    .img{
+        vertical-align: middle;
+        display: block;
+        height: 150px;
+        width: 150px;
+    }
+    h1{
+    margin-top: 0px;
+    padding-top: 0px;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 200%;
+    color: black;
+    font-weight: bold;
+}
+h2{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-left: 40px;
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 150%;
+    font-weight: bold;
+    
+}
+h3{
+    padding-top: 0px;
+    margin-bottom: 0px;
+     margin-top: 0px;
+        border-top: 2px solid black;
+        font-size: 175%;
+        font-weight: bold;
+    }
+footer{
+    text-align: center;
+    border-top: 2px solid black;
+    background-color: orange;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background: linear-gradient(45deg, black,orange,white);
+}
+header img{
+    float:left;
+}
+.img{
+vertical-align: middle;
+display: block;
+height:100;
+width: 150px;
+}
+#nav_menu ul{
+    list-style-type: none;
+}
+#nav_menu ul li{
+    float: left;
+} 
+#nav_menu ul ul{ 
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+#nav_menu ul ul li{
+    float: none;
+}
+#nav_menu ul li:hover > ul{ 
+    display: block; 
+}
+#nav_menu > ul::after{ 
+    content: "";
+    display: block;
+    clear: both;
+}
+#nav_menu{
+    background-color: black;
+    overflow: hidden;
+    text-align: none;
+}
+#nav_menu ul li a{
+    color: white;
+    text-align: center;
+    display: block;
+    width: 125px;
+    padding: 10px 0;
+    text-decoration: none;
+    background-color:black;
+    color:white;
+    font-weight: bold;
+}
+#nav_menu ul li a.lastitem{
+    border-right: none;
+}
+#nav_menu ul li a.current{
+    color: orange;
+}   
+#nav_menu ul li a:hover{
+    background-color: grey;
+}
+aside{
+   float: left;
+    padding-bottom: 410px;
+    border-spacing: 10px;
+}
+#side_nav ul{
+    list-style-type: none;
+    margin-left: .25em;
+    margin-bottom: 1.5em;
+}
+#side_nav ul li {
+    width: 150px;
+    margin-bottom: .5em;
+    border: 1.5px solid white;
+}
+#side_nav ul li a{
+   display: block;
+   color: black;
+   padding: .5em 0 .5em 1.5em;
+   text-decoration: none;
+   background-color: orange;
+   margin-right: 30px;
+   margin-left: 0px;
+   border: 2px solid black;
+}
+#side_nav ul li a:hover{
+    background-color: green;
+}                                  
+aside{
+    text-align: left;
+}
+li{
+   list-style: none;
+}   
+                        </style>
+        <head> 
+            <meta charset="utf-8"/>
+            <link rel="stylesheet" href="styles/main.css">
+            <link rel="icon" href="images/logo1.jpg">
+
+        </head>
+        <header> 
+            <img src="images/logo1.jpg" alt="Logo">
+            <h1> Auburn University at Montgomery</h1>
+            <h2>Become the Next Great Warhawk Computer Scientist!!</h2>
+        </header>
+    
+        <nav id = "nav_menu">
+            <ul>
+                <li><a href ="index.html">Home</a></li>
+                <li><a href ="program.html" class ="current">Program Description</a></li>
+                <li><a href = "gpa.html">GPA Calculator</a></li>
+                <li><a href = "teachA.html"> T.A. Application</a></li>
+            </ul>
+        </nav>
+<aside>
+    <nav id="side_nav">
+        <ul>
+            <li><a href="other.html"><b>Other Math and C.S. Majors</b></a></li>
+            <li><a href="degree.html"><b>Put Your  Degree To Work</b></a></li>
+            <li><a href="info.html"><b>More Info Contact</b></a></li>
+        </ul>
+        </nav>
+</aside>
+    <body>
+        <main>
+            <h3>Program Description</h3>
+            <p>
+                Do you want to know how to design and program the computers powering some of today’s
+                greatest innovations? Ever wondered how your phone knows where the nearest Starbucks is, how
+                Google’s self-driving car is even possible, or how your music and photos live in the cloud? Maybe
+                you want to know how computers protect businesses — and people — and other cybersecurity
+                issues. AUM’s Computer Science Program, with a curriculum based on the latest ACM/IEEE
+                recommendations and an emphasis on high-performance computing, will prepare you for a career
+                in computer programming, networking, database management, multimedia design or technology
+                architecture.
+            </p>
+        </main>
+    </body>
